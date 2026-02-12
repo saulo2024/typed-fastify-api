@@ -1,53 +1,46 @@
-import z from 'zod'
+import { z } from "zod";
 import type { FastifyTypeInstance } from "./types.js";
-import crypto from 'node:crypto'
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-}
-
-const users: User[] = [];
+import { prisma } from "./lib/prisma.js";
 
 export async function routes(app: FastifyTypeInstance) {
+  // Rota de LISTAGEM
   app.get('/users', {
     schema: {
-      tags: ['Users'],
-      description: 'Get all users',
+      description: 'Listar usuários',
+      tags: ['users'],
       response: {
         200: z.array(z.object({
-          id: z.string().uuid(),
+          id: z.string(),
           name: z.string(),
+          email: z.string(),
         })),
-
-        response: {
-          201: z.null().describe('User created'),
-        }
       },
     }
-  }, () => {
-    return
-  })
+  }, async () => {
+    const users = await prisma.user.findMany();
+    return users;
+  });
 
+  // Rota de CRIAÇÃO
   app.post('/users', {
     schema: {
-      tags: ['Users'],
-      description: 'Create a new user',
+      description: 'Criar usuário',
+      tags: ['users'],
       body: z.object({
         name: z.string(),
         email: z.string().email(),
       }),
+      response: {
+        201: z.object({}).describe('User created'),
+      }
     }
-  }, async(request, reply) => {
+  }, async (request, reply) => {
     const { name, email } = request.body;
-
-    users.push({
-      id: crypto.randomUUID(),
-      name,
-      email
+    
+    await prisma.user.create({
+      data: { name, email }
     });
 
     return reply.status(201).send({});
-  })
+  });
 }
