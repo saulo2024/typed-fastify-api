@@ -32,6 +32,8 @@ Este projeto adota as tecnologias mais modernas do ecossistema Node.js (2026 rea
 * Node.js 20+
 * NPM
 
+Desenvolvido por [Saulo Esteves](https://www.linkedin.com/in/saulo-esteves-8651b1168/) 🚀git 
+
 ### Instalação
 
 ```bash
@@ -54,4 +56,3 @@ npx prisma db push
 # 6. Inicie o servidor
 npm run dev```
 
-Desenvolvido por [Saulo Esteves](https://www.linkedin.com/in/saulo-esteves-8651b1168/) 🚀git 
