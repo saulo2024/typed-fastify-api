@@ -52,8 +52,6 @@ npx prisma generate
 npx prisma db push
 
 # 6. Inicie o servidor
-npm run dev
-
----
+npm run dev```
 
 Desenvolvido por [Saulo Esteves](https://www.linkedin.com/in/saulo-esteves-8651b1168/) 🚀git 
