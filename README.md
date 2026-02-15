@@ -4,9 +4,13 @@
 
 ![Node Version](https://img.shields.io/badge/node-20.x-green) ![TypeScript](https://img.shields.io/badge/typescript-5.x-blue) ![Fastify](https://img.shields.io/badge/fastify-5.x-black) ![Prisma](https://img.shields.io/badge/prisma-7-indigo)
 
-## 📸 Demonstração (Swagger UI)
-*[Aqui você colocará um Print ou GIF da sua tela /docs rodando]*
-*A documentação interativa (Swagger/OpenAPI) permite testar todas as rotas em tempo real sem calibração externa.*
+## 📸 Demonstração
+
+![Swagger em funcionamento](./assets/rodando.png)
+
+🚀 **[Clique aqui para testar a API ao vivo via Swagger](https://fresh-lynnet-ceia-7c822120.koyeb.app/docs)**
+
+*A documentação interativa (Swagger/OpenAPI) permite que você teste todas as rotas (GET, POST, PUT, DELETE) em tempo real, conectada diretamente ao banco de dados NeonDB na nuvem.*
 
 ## 🛠️ Tech Stack & Decisões Técnicas
 
