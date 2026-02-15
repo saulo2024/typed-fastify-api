@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
+    "outDir": "./dist",
+    "rootDir": "./",
+    
+    // Essencial para o Node reconhecer tipos como 'console' ou 'process'
+    "lib": ["esnext"],
+    "types": ["node"],
+
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  }
+}
