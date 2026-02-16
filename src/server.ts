@@ -5,6 +5,7 @@ import { validatorCompiler, serializerCompiler, type ZodTypeProvider, jsonSchema
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
 import { routes } from './routes.js';
+import fastifyJwt from '@fastify/jwt'
 
 const app =  fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -13,6 +14,10 @@ app.setSerializerCompiler(serializerCompiler)
 
 app.register(fastifyCors, {
   origin: '*'
+})
+
+app.register(fastifyJwt, {
+  secret: 'sua-chave-secreta-aqui', // Em produção, isso vai para o .env
 })
 
 app.register(fastifySwagger, {
